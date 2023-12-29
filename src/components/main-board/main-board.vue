@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-board">
     <div class="main-board-content">
       <main-board-square
         v-for="(square, index) in squareCount"
@@ -8,16 +8,24 @@
         :size="squareSize"
       />
     </div>
+    <img
+      class="art-piece"
+      src="https://omnesmag.com/wp-content/uploads/2016/05/vangogh.jpg"
+      alt=""
+    />
   </div>
 </template>
 
 <script setup>
 import MainBoardSquare from "./main-board-square.vue";
 import { ref, computed } from "vue";
+// import { configStore } from "../../stores/configStore.js";
+
+// const config = configStore();
 
 const props = defineProps({
-  cols: { type: [Number, String], default: 10 },
-  rows: { type: [Number, String], default: 10 },
+  cols: { type: [Number, String], default: 15 },
+  rows: { type: [Number, String], default: 9 },
 });
 
 const squareSize = computed(() => 60);
@@ -36,10 +44,19 @@ const completed = ref(false);
 </script>
 
 <style scoped>
+.main-board {
+  position: relative;
+}
+.art-piece {
+  position: absolute;
+  z-index: 0;
+}
 .main-board-content {
+  position: absolute;
   display: grid;
   width: v-bind("boardWidth");
   grid-template-columns: v-bind("gridTemplateColumns");
   grid-template-rows: v-bind("gridTemplateRows");
+  z-index: 50;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="main-board-square-container">
-    <div class="main-board-square" @hover="touch"></div>
+    <div ref="square" class="main-board-square" @hover="touch"></div>
   </div>
   <!-- <div class="main-board-square">Hola square</div> -->
 </template>
@@ -16,7 +16,9 @@ const props = defineProps({
   borderColor: { type: String, default: "#ff5510" },
 });
 
+const square = ref();
 const touched = ref(false);
+
 const size = computed(() => `${props.size}px`);
 const color = computed(() => props.color);
 const borderColor = computed(() => props.borderColor);
@@ -45,7 +47,7 @@ function touch() {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: solid black;
+  /* border: solid black; */
   opacity: 50%;
 }
 </style>

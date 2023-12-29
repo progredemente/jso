@@ -1,8 +1,11 @@
-<script setup>
-</script>
-
 <template>
   <div>
-    [SITE UNDER CONSTRUCTION]
+    <main-board></main-board>
   </div>
 </template>
+
+<script setup>
+import MainBoard from "./components/main-board/main-board.vue";
+</script>
+
+<style scoped></style>

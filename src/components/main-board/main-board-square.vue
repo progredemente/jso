@@ -1,12 +1,13 @@
 <template>
-  <div class="main-board-square-container">
-    <div ref="square" class="main-board-square" @hover="touch"></div>
+  <div class="main-board-square-container" @mouseover="touch()">
+    <div ref="square" class="main-board-square"></div>
   </div>
   <!-- <div class="main-board-square">Hola square</div> -->
 </template>
 
 <script setup>
 import { computed, ref } from "vue";
+import { useAnimateSquare } from "../../composables/useAnimateSquare.js";
 
 const emit = defineEmits(["touched"]);
 const props = defineProps({
@@ -24,6 +25,9 @@ const color = computed(() => props.color);
 const borderColor = computed(() => props.borderColor);
 
 function touch() {
+  console.log("HEY");
+  console.log(square.value);
+  useAnimateSquare(square.value, props.color);
   emit("touched", props.index);
 }
 </script>

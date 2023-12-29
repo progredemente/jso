@@ -1,5 +1,9 @@
 <template>
-  <div class="main-board-square-container" @mouseover="touch()">
+  <div
+    class="main-board-square-container"
+    :class="{ inactive: touched }"
+    @mouseover="touch()"
+  >
     <div ref="square" class="main-board-square"></div>
   </div>
   <!-- <div class="main-board-square">Hola square</div> -->
@@ -53,5 +57,10 @@ function touch() {
   border-radius: 50%;
   /* border: solid black; */
   opacity: 0;
+}
+
+.inactive {
+  pointer-events: none;
+  /* background-color: red; */
 }
 </style>

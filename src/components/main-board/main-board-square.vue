@@ -15,9 +15,8 @@ const props = defineProps({
   color: { type: String, default: "#99ff55" },
   borderColor: { type: String, default: "#ff5510" },
 });
-console.log("Square size", props);
 
-// const touched = ref(false)
+const touched = ref(false);
 const size = computed(() => `${props.size}px`);
 const color = computed(() => props.color);
 const borderColor = computed(() => props.borderColor);
@@ -42,7 +41,7 @@ function touch() {
 }
 
 .main-board-square {
-  background-color: gray;
+  background-color: orange;
   width: 10px;
   height: 10px;
   border-radius: 50%;

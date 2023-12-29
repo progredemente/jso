@@ -24,11 +24,11 @@ import { ref, computed } from "vue";
 // const config = configStore();
 
 const props = defineProps({
-  cols: { type: [Number, String], default: 15 },
-  rows: { type: [Number, String], default: 9 },
+  cols: { type: [Number, String], default: 30 },
+  rows: { type: [Number, String], default: 18 },
 });
 
-const squareSize = computed(() => 60);
+const squareSize = computed(() => 30);
 const cols = computed(() => Number(props.cols));
 const rows = computed(() => Number(props.rows));
 const boardWidth = computed(() => `${squareSize.value * cols.value}px`);

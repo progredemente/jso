@@ -25,8 +25,8 @@ const color = computed(() => props.color);
 const borderColor = computed(() => props.borderColor);
 
 function touch() {
-  console.log("HEY");
-  console.log(square.value);
+  if (touched.value) return;
+  touched.value = true;
   useAnimateSquare(square.value, props.color);
   emit("touched", props.index);
 }
@@ -52,6 +52,6 @@ function touch() {
   height: 10px;
   border-radius: 50%;
   /* border: solid black; */
-  opacity: 50%;
+  opacity: 0;
 }
 </style>

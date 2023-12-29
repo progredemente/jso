@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-board></main-board>
+    <main-board class="board"></main-board>
   </div>
 </template>
 
@@ -8,4 +8,8 @@
 import MainBoard from "./components/main-board/main-board.vue";
 </script>
 
-<style scoped></style>
+<style scoped>
+.board {
+  margin: 100px 200px;
+}
+</style>

@@ -1,5 +1,10 @@
 <template>
   <div class="main-board">
+    <img
+      class="art-piece"
+      src="https://omnesmag.com/wp-content/uploads/2016/05/vangogh.jpg"
+      alt=""
+    />
     <div class="main-board-content">
       <main-board-square
         v-for="(square, index) in squareCount"
@@ -8,11 +13,6 @@
         :size="squareSize"
       />
     </div>
-    <img
-      class="art-piece"
-      src="https://omnesmag.com/wp-content/uploads/2016/05/vangogh.jpg"
-      alt=""
-    />
   </div>
 </template>
 
@@ -49,7 +49,7 @@ const completed = ref(false);
 }
 .art-piece {
   position: absolute;
-  z-index: 0;
+  /* z-index: 0; */
 }
 .main-board-content {
   position: absolute;
@@ -57,6 +57,6 @@ const completed = ref(false);
   width: v-bind("boardWidth");
   grid-template-columns: v-bind("gridTemplateColumns");
   grid-template-rows: v-bind("gridTemplateRows");
-  z-index: 50;
+  /* z-index: 50; */
 }
 </style>

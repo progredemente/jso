@@ -8,6 +8,7 @@
     "build": "webpack --config config/webpack.prod.js"
   },
   "dependencies": {
+    "pinia": "^2.1.7",
     "standard": "^17.1.0",
     "vue": "^3.3.12"
   },

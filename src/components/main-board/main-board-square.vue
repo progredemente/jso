@@ -1,5 +1,7 @@
 <template>
-  <div class="main-board-square" @hover="touch">h</div>
+  <div class="main-board-square-container">
+    <div class="main-board-square" @hover="touch"></div>
+  </div>
   <!-- <div class="main-board-square">Hola square</div> -->
 </template>
 
@@ -26,14 +28,25 @@ function touch() {
 </script>
 
 <style scoped>
-.main-board-square {
-  display: block;
+.main-board-square-container {
+  display: grid;
+  place-content: center;
   width: v-bind("size");
   height: v-bind("size");
-  background-color: v-bind("color");
-  border: solid;
+  /* background-color: v-bind("color"); */
+  /* border: solid;
   border-color: v-bind("borderColor");
-  border-width: 2px;
+  border-width: 2px; */
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.main-board-square {
+  background-color: gray;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: solid black;
+  opacity: 50%;
 }
 </style>

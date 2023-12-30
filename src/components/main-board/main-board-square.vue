@@ -13,13 +13,15 @@
 import { computed, ref } from "vue";
 import { useAnimateSquare } from "../../composables";
 
-const emit = defineEmits(["touched"]);
 const props = defineProps({
   size: { type: [Number, String], required: true },
   index: { type: Number, required: true },
   color: { type: String, default: "#99ff55" },
   borderColor: { type: String, default: "#ff5510" },
+  block: { type: Boolean, default: false },
 });
+
+const emit = defineEmits(["touched"]);
 
 const square = ref();
 const touched = ref(false);
@@ -29,7 +31,7 @@ const color = computed(() => props.color);
 const borderColor = computed(() => props.borderColor);
 
 function touch() {
-  if (touched.value) return;
+  if (props.block || touched.value) return;
   touched.value = true;
   useAnimateSquare(square.value, props.color);
   emit("touched", props.index);

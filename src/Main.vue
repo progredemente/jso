@@ -1,6 +1,9 @@
 <template>
   <div>
-    <main-board class="board"></main-board>
+    <main-board
+      class="board"
+      src="https://omnesmag.com/wp-content/uploads/2016/05/vangogh.jpg"
+    ></main-board>
   </div>
 </template>
 
@@ -10,6 +13,6 @@ import MainBoard from "./components/main-board/main-board.vue";
 
 <style scoped>
 .board {
-  margin: 100px 200px;
+  margin: 0px 200px;
 }
 </style>

@@ -13,6 +13,8 @@
 import { computed, ref } from "vue";
 import { useAnimateSquare } from "../../composables";
 
+const emit = defineEmits(["touched"]);
+
 const props = defineProps({
   size: { type: [Number, String], required: true },
   index: { type: Number, required: true },
@@ -20,8 +22,6 @@ const props = defineProps({
   borderColor: { type: String, default: "#ff5510" },
   block: { type: Boolean, default: false },
 });
-
-const emit = defineEmits(["touched"]);
 
 const square = ref();
 const touched = ref(false);

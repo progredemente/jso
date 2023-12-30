@@ -25,6 +25,7 @@ import { ref, computed, watch } from "vue";
 // import { configStore } from "../../stores/configStore.js";
 
 // const config = configStore();
+const emit = defineEmits(["board-completed"]);
 
 const props = defineProps({
   cols: { type: [Number, String], default: 30 },
@@ -32,8 +33,6 @@ const props = defineProps({
   src: { type: String },
   victory: { type: Number, default: 15 },
 });
-
-const emit = defineEmits(["board-completed"]);
 
 const squareColor = useRandomColor();
 const squaresTouched = ref(0);

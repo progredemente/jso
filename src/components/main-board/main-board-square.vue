@@ -11,7 +11,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { useAnimateSquare } from "../../composables/useAnimateSquare.js";
+import { useAnimateSquare } from "../../composables";
 
 const emit = defineEmits(["touched"]);
 const props = defineProps({
@@ -51,7 +51,7 @@ function touch() {
 }
 
 .main-board-square {
-  background-color: orange;
+  background-color: v-bind("color");
   width: 10px;
   height: 10px;
   border-radius: 50%;

@@ -10,6 +10,7 @@
         v-for="(square, index) in squareCount"
         :key="index"
         :index="index"
+        :color="squareColor"
         :size="squareSize"
       />
     </div>
@@ -18,6 +19,7 @@
 
 <script setup>
 import MainBoardSquare from "./main-board-square.vue";
+import { useRandomColor } from "../../composables";
 import { ref, computed } from "vue";
 // import { configStore } from "../../stores/configStore.js";
 
@@ -29,6 +31,9 @@ const props = defineProps({
 });
 
 const squareSize = computed(() => 30);
+const squareColor = useRandomColor();
+const completed = ref(false);
+
 const cols = computed(() => Number(props.cols));
 const rows = computed(() => Number(props.rows));
 const boardWidth = computed(() => `${squareSize.value * cols.value}px`);
@@ -39,8 +44,6 @@ console.log("BOARD", squareSize.value);
 
 const gridTemplateColumns = computed(() => `repeat(${cols.value}, 1fr)`);
 const gridTemplateRows = computed(() => `repeat(${rows.value}, 1fr)`);
-
-const completed = ref(false);
 </script>
 
 <style scoped>

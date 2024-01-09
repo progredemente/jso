@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="<%= htmlWebpackPlugin.options.resourcesUrl%>/jso.png" />
+    <link rel="icon" href="%VITE_RESOURCES_URL%/jso.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -10,11 +10,12 @@
       content="JSO"
     />
     <link rel="manifest" href="manifest.json" />
-    <link href="<%= htmlWebpackPlugin.options.resourcesUrl%>/fonts.css" rel="stylesheet" type="text/css">
+    <link href="%VITE_RESOURCES_URL%/fonts.css" rel="stylesheet" type="text/css">
     <title>JSO</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
